@@ -1,0 +1,27 @@
+<div [formGroup]="formGroup">
+  <!-- Competency Dropdown -->
+  <mat-form-field class="example-full-width">
+    <mat-select placeholder="Select Competencies" formControlName="competencies" multiple>
+      <mat-option *ngFor="let competency of competencies" [value]="competency">{{ competency }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Awards Section -->
+  <div formArrayName="awards">
+    <div *ngFor="let award of awards.controls; let i = index" [formGroupName]="i">
+      <h4>Award #{{ i + 1 }}</h4>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Award Title" formControlName="title">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Award Year" formControlName="year">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <!-- Add Award Button -->
+  <button mat-raised-button color="primary" (click)="addAwardEntry()">+ Add Award</button>
+</div>

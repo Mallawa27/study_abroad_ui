@@ -1,0 +1,106 @@
+.sidebar {
+  width: 280px;
+  height: calc(100vh - 90px);
+  background: #f5f5f5;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 90px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  padding: 15px 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: larger;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background: #ddd;
+}
+
+.nav-links li:first-child {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+.nested-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.nested-links li {
+  padding: 5px 0;
+}
+
+.nested-links a {
+  font-size:15px;
+  
+}
+
+.nav-links a.highlighted {
+  background-color: #ffd700;
+  border: 2px solid #000;
+  font-weight: bold;
+}
+
+.toggle-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: larger;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.toggle-link:hover {
+  background: #ddd;
+}
+
+.toggle-link::after {
+  content: '▼';
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 12px;
+  transition: transform 0.3s;
+}
+
+details[open] .toggle-link::after {
+  transform: rotate(180deg);
+}
+
+/* Style the details/summary to remove default marker and match design */
+details {
+  margin: 0;
+  padding: 0;
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}

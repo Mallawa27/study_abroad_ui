@@ -1,0 +1,22 @@
+<div class="course-detail-container">
+    <h2>Courses</h2>
+    <div class="course-header">
+        <h3>{{ course?.name }}</h3>
+        <p>{{ course?.university }}, {{ course?.location }}</p>
+        <div class="rating">Rating: {{ course?.rating }}/5</div>
+    </div>
+    <section class="course-section">
+        <h4>Introduction</h4>
+        <p>{{ course?.introduction || 'No introduction available.' }}</p>
+    </section>
+    <section class="course-section">
+        <h4>Highlights</h4>
+        <ul>
+            <li *ngFor="let highlight of course?.highlights">{{ highlight }}</li>
+        </ul>
+    </section>
+    <section class="course-section">
+        <h4>Fees</h4>
+        <p>{{ course?.fees || 'Fee details not available.' }}</p>
+    </section>
+</div>

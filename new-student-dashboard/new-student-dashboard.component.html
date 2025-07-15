@@ -1,0 +1,67 @@
+<header class="header">
+  <div class="header-container">
+    <img src="../../../assets/signuplogo.jpg" class="logo" alt="Signup Logo">
+    <img src="../../../assets/bell.png" class="bell" alt="Bell Icon">
+  </div>
+</header>
+
+<div class="dashboard-container">
+  <app-sidebar></app-sidebar> <!-- Sidebar component -->
+
+  <div class="dashboard-content">
+    <!-- Dashboard Summary -->
+    <div class="dashboard-summary">
+      <div class="summary-card">
+        <p>Total Applications</p>
+        <h2>6</h2>
+      </div>
+      <div class="summary-card">
+        <p>Applications Pending</p>
+        <h2>5</h2>
+      </div>
+      <div class="summary-card">
+        <p>Total Courses</p>
+        <h2>1</h2>
+      </div>
+      <div class="summary-card">
+        <p>Total Careers</p>
+        <h2>3</h2>
+      </div>
+      <div class="summary-card">
+        <p>Scholarships Awarded</p>
+        <h2>2</h2>
+      </div>
+    </div>
+
+    <!-- Create Application Section -->
+    <div class="create-application">
+      <h2>Create Your Study Abroad Dashboard</h2>
+      <div class="button-container">
+        <button mat-raised-button color="primary" (click)="navigateToApplication()">Create Application</button>
+<button mat-raised-button color="primary" (click)="navigateToRecommendations()">AI recommendation</button>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="quick-links">
+      <div class="left-section">
+        <h3>Quick Links</h3>
+        <div class="sub-text">Access key functionalities using these links</div>
+      </div>
+    
+      <div class="right-buttons">
+        <button mat-stroked-button>My Applications</button>
+        <button mat-stroked-button>Career Library</button>
+        <button mat-stroked-button (click)="toggleStudyAbroad()">Study Abroad</button>
+        <button mat-stroked-button>Your Account</button>
+        <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+      </div>
+    </div>
+    
+
+    <!-- Study Abroad Applications (if clicked) -->
+    <div class="study-abroad-applications" *ngIf="showApplicationForm">
+      <app-application-form></app-application-form>
+    </div>
+  </div>
+</div>

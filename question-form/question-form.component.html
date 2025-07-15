@@ -1,0 +1,70 @@
+<div class="container">
+  <header class="header">
+    <div class="header-container">
+      <img src="../../../assets/signuplogo.jpg" class="logo" alt="Signup Logo">
+      <img src="../../../assets/bell.png" class="bell" alt="Bell Icon">
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+    <app-sidebar></app-sidebar>
+
+    <div class="main-content">
+      <h2>Study Abroad Questionnaire</h2>
+
+      <section *ngIf="currentQuestionIndex < questions.length; else recommendation">
+        <div class="question-card">
+          <h3 class="question-title">{{ questions[currentQuestionIndex].question }}</h3>
+          <form [formGroup]="questionForm">
+            <div class="mcq-options">
+              <label *ngFor="let option of questions[currentQuestionIndex].options; let i = index" class="mcq-option">
+                <input type="radio" [formControlName]="'answer'" [value]="option" (change)="onOptionChange()">
+                {{ option }}
+              </label>
+            </div>
+          </form>
+          <div class="navigation-buttons">
+            <button class="next-btn" (click)="nextQuestion()" [disabled]="!questionForm.valid">Next</button>
+          </div>
+        </div>
+      </section>
+
+      <ng-template #recommendation>
+        <section>
+          <div class="recommendation-card">
+            <h3>Recommendation</h3>
+            <!-- Display error message if the API call fails -->
+            <div *ngIf="errorMessage" class="error-message">
+              <p>{{ errorMessage }}</p>
+            </div>
+            <!-- Display recommendations if available -->
+            <div *ngIf="recommendations; else loading">
+              <div class="recommendation-section">
+                <h4>Aspirational Universities</h4>
+                <ul>
+                  <li *ngFor="let uni of recommendations['aspirationalUniversities']">{{ uni }}</li>
+                </ul>
+              </div>
+              <div class="recommendation-section">
+                <h4>Aligned Universities</h4>
+                <ul>
+                  <li *ngFor="let uni of recommendations['alignedUniversities']">{{ uni }}</li>
+                </ul>
+              </div>
+              <div class="recommendation-section">
+                <h4>Safe Bet Universities</h4>
+                <ul>
+                  <li *ngFor="let uni of recommendations['safeBetUniversities']">{{ uni }}</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Display a loading message while waiting for the API response -->
+            <ng-template #loading>
+              <p>Loading your personalized study abroad recommendations...</p>
+            </ng-template>
+          </div>
+        </section>
+      </ng-template>
+    </div>
+  </div>
+</div>

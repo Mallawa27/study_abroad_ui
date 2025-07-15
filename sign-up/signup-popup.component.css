@@ -1,0 +1,132 @@
+.mat-card-containing-div {
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 38px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; 
+  margin: 0 auto; 
+  margin-top: 1%; 
+}
+
+.logo {
+  width: 59px;
+  display: block;
+  margin: 10px auto;
+}
+
+.logintext {
+  color: #000;
+  font-size: 21px;
+  font-weight: 500;
+  font-family: roboto, sans-serif;
+  text-align: center;
+  margin: 10px 0; 
+}
+
+h3 {
+  font-size: 26px;
+  font-family: roboto, sans-serif;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px; 
+}
+
+.mat-form-field {
+  display: block;
+  width: 100%;
+  margin-bottom: 16px; 
+}
+
+.mat-form-field input {
+  font-family: roboto, sans-serif;
+  font-size: 16px;
+}
+
+button.mat-raised-button.mat-primary {
+  padding: 9px 91px;
+  border-radius: 38px;
+  font-family: roboto, sans-serif;
+  font-weight: 520;
+  color: #fff;
+  font-size: 16px;
+  background-color: #2103f8;
+  border: 1px solid #2103f8;
+  display: block;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.error-message-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  z-index: 1000; 
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.cancel-button {
+  margin-top: 10px;
+  color: #007bff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.error-message {
+  display: block;
+}
+/* signup-popup.component.css */
+
+/* General styles for mat-error */
+mat-error {
+  color: #db1001; 
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+
+
+/* Make sure only the relevant messages are shown */
+@media (min-width: 601px) {
+  .mobile-only {
+    display: none;
+  }
+  .desktop-only {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+
+.success-message-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  z-index: 1000;
+  background-color: #4CAF50;
+  border: 1px solid #3e8e41;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+}
+

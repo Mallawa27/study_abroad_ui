@@ -1,0 +1,59 @@
+<div class="container">
+    <header class="header">
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <div class="profile">
+            <img src="assets/profile.png" alt="Profile Icon">
+        </div>
+    </header>
+    <div class="main-wrapper">
+        <!-- <nav class="sidebar">
+            <h4>DASHBOARD</h4>
+            <ul>
+                <li><a href="#">My Sessions</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Study Abroad</a></li>
+                <li class="explorer">
+                    <a href="#" (click)="toggleExplorer()">Explorer</a>
+                    <ul class="submenu" *ngIf="showExplorer">
+                        <li><a routerLink="/studyabroadexplorer/country">Country</a></li>
+                        <li><a routerLink="/studyabroadexplorer/university">University</a></li>
+                        <li><a routerLink="/studyabroadexplorer/course">Course</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Queries</a></li>
+                <li><a href="#">Billings</a></li>
+            </ul>
+        </nav> -->
+
+        <div class="main-content">
+            <h2>Courses</h2>
+            <section>
+                <h3>Rating</h3>
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <h4>Degree Type</h4>
+                        <label><input type="checkbox" (change)="filterCourses()" [(ngModel)]="filters.phd"> PhD</label>
+                        <label><input type="checkbox" (change)="filterCourses()" [(ngModel)]="filters.masters"> Masters</label>
+                        <label><input type="checkbox" (change)="filterCourses()" [(ngModel)]="filters.bachelors"> Bachelors</label>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Field of Study</h4>
+                        <label><input type="checkbox" (change)="filterCourses()" [(ngModel)]="filters.engineering"> Engineering</label>
+                        <label><input type="checkbox" (change)="filterCourses()" [(ngModel)]="filters.arts"> Arts</label>
+                        <label><input type="checkbox" (change)="filterCourses()" [(ngModel)]="filters.business"> Business Studies</label>
+                        <label><input type="checkbox" (change)="filterCourses()" [(ngModel)]="filters.commerce"> Commerce</label>
+                        <label><input type="checkbox" (change)="filterCourses()" [(ngModel)]="filters.literature"> Literature</label>
+                        <label><input type="checkbox" (change)="filterCourses()" [(ngModel)]="filters.science"> Science</label>
+                    </div>
+                </div>
+                <div class="courses-list">
+                    <div class="course-card" *ngFor="let course of filteredCourses" (click)="navigateToCourse(course.name)">
+                        <h4>{{ course.name }} ({{ course.duration }})</h4>
+                        <div class="rating">Rating: {{ course.rating }}/5</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

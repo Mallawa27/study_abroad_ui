@@ -1,0 +1,17 @@
+<div class="medical-records">
+    <h2>Medical Record</h2>
+  
+    <form [formGroup]="medicalRecordsForm">
+      <label>Any Medical Condition/Disability</label>
+      <mat-radio-group formControlName="hasMedicalCondition">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+  
+      <div *ngIf="medicalRecordsForm.get('hasMedicalCondition').value === 'yes'">
+        <label>Please Specify Your Condition</label>
+        <textarea matInput formControlName="conditionDetails" rows="4"></textarea>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,13 @@
+<div class="error-container">
+  <div class="background-image"></div>
+  <div class="error-message-container">
+    <div *ngIf="errorMessage" class="error-message-box">
+      <button class="dismiss-button" (click)="dismissError()">Dismiss</button>
+     
+      <p class="error-message-text">{{ errorMessage }}</p>
+    </div>
+    <h1>Something Went Wrong!</h1>
+    <h2>Cannot Signup Now.Please try again later</h2>
+    <button class="return-button" (click)="Return()">Return</button>
+  </div>
+</div>

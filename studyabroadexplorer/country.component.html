@@ -1,0 +1,67 @@
+<div class="container">
+    <header class="header">
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <div class="profile">
+            <img src="assets/profile.png" alt="Profile Icon">
+        </div>
+    </header>
+    <div class="main-wrapper">
+        <!-- <nav class="sidebar">
+            <h4>DASHBOARD</h4>
+            <ul>
+                <li><a href="#">My Sessions</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Study Abroad</a></li>
+                <li class="explorer">
+                    <a href="#" (click)="toggleExplorer()">Explorer</a>
+                    <ul class="submenu" *ngIf="showExplorer">
+                        <li><a routerLink="/studyabroadexplorer/country">Country</a></li>
+                        <li><a routerLink="/studyabroadexplorer/university">University</a></li>
+                        <li><a routerLink="/studyabroadexplorer/course">Course</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Queries</a></li>
+                <li><a href="#">Billings</a></li>
+            </ul>
+        </nav> -->
+
+        <div class="main-content">
+            <h2>Country</h2>
+            <section>
+                <h1>Popular Destinations</h1>
+                <div class="countries">
+                    <div class="country-card" (click)="navigateToCountry('uk')">
+                        <h3 class="country-name">UK</h3>
+                        <img src="assets/uk.jpg" alt="UK" class="country-img">
+                    </div>
+                    <div class="country-card" (click)="navigateToCountry('usa')">
+                        <h3 class="country-name">USA</h3>
+                        <img src="assets/usa.jpg" alt="USA" class="country-img">
+                    </div>
+                    <div class="country-card" (click)="navigateToCountry('canada')">
+                        <h3 class="country-name">Canada</h3>
+                        <img src="assets/canada.jpg" alt="Canada" class="country-img">
+                    </div>
+                    <div class="country-card" (click)="navigateToCountry('japan')">
+                        <h3 class="country-name">Japan</h3>
+                        <img src="assets/japan.jpg" alt="Japan" class="country-img">
+                    </div>
+                </div>
+            </section>
+            <h2 class="other-destinations-heading">Other Destinations</h2>
+            <section>
+                <div class="countries other-destinations">
+                    <div class="country-card" (click)="navigateToCountry('australia')">
+                        <h3 class="country-name">Australia</h3>
+                        <img src="assets/aus.jpg" alt="Australia" class="country-img">
+                    </div>
+                    <div class="country-card" (click)="navigateToCountry('china')">
+                        <h3 class="country-name">China</h3>
+                        <img src="assets/china.jpg" alt="China" class="country-img">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

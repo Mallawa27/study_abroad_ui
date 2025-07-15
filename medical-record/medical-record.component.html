@@ -1,0 +1,13 @@
+<div [formGroup]="formGroup">
+  <!-- Medical Condition Radio Button -->
+  <label>Any medical condition/disability?</label>
+  <mat-radio-group formControlName="hasMedicalCondition">
+    <mat-radio-button value="yes">Yes</mat-radio-button>
+    <mat-radio-button value="no">No</mat-radio-button>
+  </mat-radio-group>
+
+  <!-- Specify Condition Text Area (Visible if 'Yes' is selected) -->
+  <mat-form-field class="example-full-width" *ngIf="formGroup.get('hasMedicalCondition').value === 'yes'">
+    <textarea matInput placeholder="Specify Your Condition" formControlName="conditionDescription"></textarea>
+  </mat-form-field>
+</div>

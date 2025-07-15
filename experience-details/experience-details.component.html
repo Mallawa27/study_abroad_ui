@@ -1,0 +1,60 @@
+<ng-container *ngFor="let entry of formArray.controls; let i = index" [formGroup]="entry">
+    <h3>Experience Entry #{{ i + 1 }}</h3>
+  
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Type" formControlName="type" multiple>
+        <mat-option *ngFor="let type of jobTypes" [value]="type">{{ type }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Total Years in Experience" formControlName="totalYears">
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Current Professional Area" formControlName="professionalArea">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Current Designation" formControlName="designation">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Current Professional Sub Areas" formControlName="subAreas">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Company" formControlName="company">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Country" formControlName="country">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="City" formControlName="city">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Job Title" formControlName="jobTitle">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="State" formControlName="state">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Job Start Year" formControlName="startYear">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Job End Year" formControlName="endYear">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Description" formControlName="description"></textarea>
+    </mat-form-field>
+  </ng-container>
+  
+  <button mat-raised-button color="primary" (click)="addEntry.emit()">+ Add More Details</button>
+  

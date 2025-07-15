@@ -1,0 +1,131 @@
+<header class="header">
+  <div class="header-container">
+    <img src="../../../assets/signuplogo.jpg" class="logo" alt="Signup Logo">
+    <img src="../../../assets/bell.png" class="bell" alt="Bell Icon">
+  </div>
+</header>
+
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <div class="form-container">
+    <mat-horizontal-stepper [linear]="true" [(selectedIndex)]="currentStep">
+      Basic Details Step 
+      <mat-step label="Basic Details" [stepControl]="basicDetailsForm">
+        <app-basic-details [formGroup]="basicDetailsForm"></app-basic-details>
+        <div class="form-buttons">
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      
+  
+   
+  
+
+      <!-- Address Details Step -->
+      <mat-step label="Address Details" [stepControl]="addressForm">
+        <app-address-details [formGroup]="addressForm"></app-address-details>
+        <div class="form-buttons">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext [disabled]="!addressForm.valid">Next</button>
+        </div>
+      </mat-step>
+
+      <!-- Education Details Step -->
+      <mat-step label="Education Details" [stepControl]="educationForm">
+        <app-education-details [formArray]="educationEntries" (addEntry)="addEducationEntry()"></app-education-details>
+        <div class="form-buttons">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext [disabled]="!educationForm.valid">Next</button>
+        </div>
+      </mat-step>
+
+      <!-- Experience Details Step -->
+      <mat-step label="Experience Details" [stepControl]="experienceForm">
+        <app-experience-details [formArray]="experienceEntries" (addEntry)="addExperienceEntry()"></app-experience-details>
+        <div class="form-buttons">
+          <button mat-button matStepperPrevious>Back</button> <!-- Fixed typo 'Backcn' to 'Back' -->
+          <button mat-button matStepperNext [disabled]="!experienceForm.valid">Next</button>
+        </div>
+      </mat-step>
+
+      <!-- Language Certification Step -->
+      <mat-step label="Language Certification Details" [stepControl]="languageCertificationForm">
+        <app-language-certification-details [formArray]="languageCertificationEntries" (addEntry)="addLanguageCertificationEntry()"></app-language-certification-details>
+        <div class="form-buttons">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext [disabled]="!languageCertificationForm.valid">Next</button>
+        </div>
+      </mat-step>
+
+      <!-- Competency & Achievement Step -->
+      <mat-step label="Competency and Achievement" [stepControl]="competencyAchievementForm">
+        <app-competency-achievement [formGroup]="competencyAchievementForm"></app-competency-achievement>
+        <div class="form-buttons">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext [disabled]="!competencyAchievementForm.valid">Next</button>
+        </div>
+      </mat-step>
+
+      <!-- Medical Records Step -->
+      <mat-step label="Medical Records" [stepControl]="medicalRecordsForm">
+        <app-medical-records [formGroup]="medicalRecordsForm" (formValueChange)="onMedicalRecordsChange($event)"></app-medical-records>
+        <div class="form-buttons">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext [disabled]="!medicalRecordsForm.valid">Next</button>
+        </div>
+      </mat-step>
+
+      <!-- Country Selection Step -->
+      <mat-step [stepControl]="countrySelectionForm">
+        <ng-template matStepLabel>Country Selection</ng-template>
+        <app-country-selection (countrySelected)="onCountrySelected($event)"></app-country-selection>
+        <div class="form-buttons">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext [disabled]="countrySelectionForm.get('selectedCountries')?.value.length === 0">Next</button>
+        </div>
+      </mat-step>
+
+      <!-- University Selection Step -->
+      <mat-step>
+        <ng-template matStepLabel>University Selection</ng-template>
+        <app-university-list 
+          [selectedCountries]="countrySelectionForm.get('selectedCountries')?.value" 
+          (universitySelected)="onUniversitySelected($event)">
+        </app-university-list>
+        <div class="form-buttons">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext [disabled]="selectedUniversities.length === 0">Next</button>
+        </div>
+      </mat-step>
+
+      <!--Test-Scores -->
+    <mat-step [stepControl]="testScoresComponent?.testScoresForm">
+      <ng-template matStepLabel>Test Score Details</ng-template>
+      <app-test-scores #testScoresComponent></app-test-scores>
+      <div class="stepper-buttons">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext [disabled]="!testScoresComponent?.testScoresForm.valid">Next</button>
+      </div>
+    </mat-step>
+
+      <!-- ✅ Documentation Now LAST -->
+<mat-step [stepControl]="documentationForm">
+  <ng-template matStepLabel>Documentation</ng-template>
+  <app-documentation #documentationComponent></app-documentation>
+
+  <div class="stepper-buttons">
+    <button mat-button matStepperPrevious>Back</button>
+
+    <!-- ✅ Final Submit instead of Next -->
+    <button mat-flat-button color="primary" (click)="submitApplication()" 
+            [disabled]="!documentationComponent.documentationForm.valid">
+      Submit
+    </button>
+  </div>
+</mat-step>
+
+    </mat-horizontal-stepper>
+  </div>
+</div>

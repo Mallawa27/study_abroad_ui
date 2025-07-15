@@ -1,0 +1,136 @@
+<div class="country-detail-container">
+    <h2>{{ country | titlecase }}</h2>
+    <section class="country-section">
+        <h3>About {{ country | titlecase }}</h3>
+        <p *ngIf="country === 'uk'">
+            The United Kingdom is a global hub for education, culture, and history, offering a rich academic environment with centuries-old traditions.
+        </p>
+        <p *ngIf="country === 'usa'">
+            The USA is known for its diverse educational opportunities, cutting-edge research facilities, and a wide range of universities catering to various fields.
+        </p>
+        <p *ngIf="country === 'canada'">
+            Canada is renowned for its high-quality education, multicultural environment, and welcoming policies for international students.
+        </p>
+        <p *ngIf="country === 'japan'">
+            Japan combines modern innovation with deep cultural heritage, providing a unique study experience with advanced technology programs.
+        </p>
+        <p *ngIf="country === 'australia'">
+            Australia offers a relaxed lifestyle, excellent education system, and opportunities for research in fields like environmental science and engineering.
+        </p>
+        <p *ngIf="country === 'china'">
+            China provides affordable education, a growing number of English-taught programs, and a chance to immerse in one of the world's oldest civilizations.
+        </p>
+    </section>
+
+    <section class="country-section">
+        <h3>Highlights</h3>
+        <ul *ngIf="country === 'uk'">
+            <li>Historic universities like Oxford and Cambridge.</li>
+            <li>Global financial hub in London.</li>
+            <li>Rich cultural diversity and history.</li>
+        </ul>
+        <ul *ngIf="country === 'usa'">
+            <li>Home to Ivy League schools like Harvard and Yale.</li>
+            <li>Leading in technology and innovation.</li>
+            <li>Vast range of climates and cultures.</li>
+        </ul>
+        <ul *ngIf="country === 'canada'">
+            <li>Scenic landscapes and safe cities.</li>
+            <li>Strong focus on research and innovation.</li>
+            <li>Post-graduation work opportunities.</li>
+        </ul>
+        <ul *ngIf="country === 'japan'">
+            <li>Advanced technology and engineering programs.</li>
+            <li>Unique cultural experiences like tea ceremonies.</li>
+            <li>High safety standards and efficient public transport.</li>
+        </ul>
+        <ul *ngIf="country === 'australia'">
+            <li>World-class marine and environmental research.</li>
+            <li>Vibrant cities like Sydney and Melbourne.</li>
+            <li>Work rights for international students.</li>
+        </ul>
+        <ul *ngIf="country === 'china'">
+            <li>Rapidly growing economy and global influence.</li>
+            <li>Scholarships for international students.</li>
+            <li>Rich history with landmarks like the Great Wall.</li>
+        </ul>
+    </section>
+
+    <section class="country-section">
+        <h3>Study in {{ country | titlecase }}</h3>
+        <p *ngIf="country === 'uk'">
+            The UK offers a variety of programs with a focus on critical thinking, research, and practical skills, often with shorter program durations.
+        </p>
+        <p *ngIf="country === 'usa'">
+            Studying in the USA provides flexibility in course selection, extensive campus facilities, and opportunities for internships with global companies.
+        </p>
+        <p *ngIf="country === 'canada'">
+            Canada’s education system emphasizes practical learning, with co-op programs and a welcoming environment for international students.
+        </p>
+        <p *ngIf="country === 'japan'">
+            Japan’s universities focus on technology and innovation, with many programs now offered in English to attract international students.
+        </p>
+        <p *ngIf="country === 'australia'">
+            Australia provides a balanced education with a focus on research, outdoor learning, and strong support for international students.
+        </p>
+        <p *ngIf="country === 'china'">
+            China offers affordable education with a growing number of English-taught programs, especially in fields like business and engineering.
+        </p>
+    </section>
+
+    <section class="country-section">
+        <h3>Cost of Studying in {{ country | titlecase }}</h3>
+        <p *ngIf="country === 'uk'">
+            Tuition fees range from £10,000 to £38,000 per year, with living costs around £12,000 annually in cities like London.
+        </p>
+        <p *ngIf="country === 'usa'">
+            Tuition fees vary widely, from $20,000 to $50,000 per year, with living expenses averaging $15,000 annually.
+        </p>
+        <p *ngIf="country === 'canada'">
+            Tuition fees are between CAD 20,000 and CAD 40,000 per year, with living costs around CAD 15,000 annually.
+        </p>
+        <p *ngIf="country === 'japan'">
+            Tuition fees range from ¥500,000 to ¥1,500,000 per year, with living costs around ¥1,200,000 annually in cities like Tokyo.
+        </p>
+        <p *ngIf="country === 'australia'">
+            Tuition fees range from AUD 20,000 to AUD 45,000 per year, with living costs around AUD 21,000 annually.
+        </p>
+        <p *ngIf="country === 'china'">
+            Tuition fees are between ¥20,000 and ¥50,000 per year, with living costs around ¥30,000 annually in cities like Beijing.
+        </p>
+    </section>
+
+    <section class="country-section">
+        <h3>Top Ranked Universities in {{ country | titlecase }}</h3>
+        <ul *ngIf="country === 'uk'">
+            <li>University of Oxford</li>
+            <li>University of Cambridge</li>
+            <li>Imperial College London</li>
+        </ul>
+        <ul *ngIf="country === 'usa'">
+            <li>Harvard University</li>
+            <li>Stanford University</li>
+            <li>Massachusetts Institute of Technology (MIT)</li>
+        </ul>
+        <ul *ngIf="country === 'canada'">
+            <li>University of Toronto</li>
+            <li>University of British Columbia</li>
+            <li>McGill University</li>
+        </ul>
+        <ul *ngIf="country === 'japan'">
+            <li>University of Tokyo</li>
+            <li>Kyoto University</li>
+            <li>Osaka University</li>
+        </ul>
+        <ul *ngIf="country === 'australia'">
+            <li>University of Melbourne</li>
+            <li>University of Sydney</li>
+            <li>Australian National University</li>
+        </ul>
+        <ul *ngIf="country === 'china'">
+            <li>Tsinghua University</li>
+            <li>Peking University</li>
+            <li>Fudan University</li>
+        </ul>
+    </section>
+</div>

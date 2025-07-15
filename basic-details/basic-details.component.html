@@ -1,0 +1,63 @@
+<form [formGroup]="formGroup">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="First Name" formControlName="firstName">
+    <mat-error *ngIf="formGroup.get('firstName')?.hasError('required')">First Name is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Last Name" formControlName="lastName">
+    <mat-error *ngIf="formGroup.get('lastName')?.hasError('required')">Last Name is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" formControlName="email">
+    <mat-error *ngIf="formGroup.get('email')?.hasError('required')">Email is required</mat-error>
+    <mat-error *ngIf="formGroup.get('email')?.hasError('email')">Enter a valid email</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Phone Number" formControlName="phoneNumber">
+    <mat-error *ngIf="formGroup.get('phoneNumber')?.hasError('required')">Phone Number is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Gender</mat-label>
+    <mat-select formControlName="gender">
+      <mat-option value="male">Male</mat-option>
+      <mat-option value="female">Female</mat-option>
+      <mat-option value="other">Other</mat-option>
+    </mat-select>
+    <mat-error *ngIf="formGroup.get('gender')?.hasError('required')">Gender is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Date of Birth</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dob">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="formGroup.get('dob')?.hasError('required')">Date of Birth is required</mat-error>
+  </mat-form-field>
+
+  <h3>Guardian Details</h3>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Guardian First Name" formControlName="guardianFirstName">
+    <mat-error *ngIf="formGroup.get('guardianFirstName')?.hasError('required')">Guardian's First Name is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Guardian Last Name" formControlName="guardianLastName">
+    <mat-error *ngIf="formGroup.get('guardianLastName')?.hasError('required')">Guardian's Last Name is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Guardian Email" formControlName="guardianEmail">
+    <mat-error *ngIf="formGroup.get('guardianEmail')?.hasError('required')">Email is required</mat-error>
+    <mat-error *ngIf="formGroup.get('guardianEmail')?.hasError('email')">Enter a valid email</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Guardian Phone Number" formControlName="guardianPhoneNumber">
+    <mat-error *ngIf="formGroup.get('guardianPhoneNumber')?.hasError('required')">Phone Number is required</mat-error>
+  </mat-form-field>
+</form>

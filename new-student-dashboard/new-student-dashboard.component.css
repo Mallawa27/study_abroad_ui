@@ -1,0 +1,128 @@
+.header {
+  background: linear-gradient(to right, blue, purple);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 50px;
+}
+
+.bell {
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Main Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 90px; /* below header */
+}
+
+/* Content beside Sidebar */
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 280px;
+}
+
+/* Dashboard Summary Cards */
+.dashboard-summary {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.summary-card {
+  flex: 1;
+  padding: 20px;
+  background: #f0f0f0;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Create Application Section */
+.create-application {
+  background: rgb(9, 9, 244);
+  padding: 20px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adds a 20px gap between buttons */
+  margin-top: 10px; /* Optional: Adds space between the heading and buttons */
+}
+
+/* Quick Links */
+.quick-links {
+  background: rgb(9, 9, 244);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left side (title and subtext) */
+.left-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-section h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.left-section .sub-text {
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+/* Right side (buttons) */
+.right-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.right-buttons button {
+  background: white;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.right-buttons button:hover {
+  background: #ffffff;
+  color: #000000;
+}

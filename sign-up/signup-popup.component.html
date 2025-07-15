@@ -1,0 +1,175 @@
+<mat-dialog-content>
+  <!--success message-->
+  <div *ngIf="alertMessage" class="success-message-container">
+    <p class="success-message">{{ alertMessage }}</p>
+    <button class="cancel-button" (click)="clearAlertMessages()">Dismiss</button>
+  </div>
+
+  <!-- Display Error Message -->
+<div *ngIf="errorMessage" class="error-message-container">
+ <p class="error-message">{{ errorMessage }}</p>
+ <button class="cancel-button" (click)="clearErrorMessages()">Dismiss</button>
+</div>
+
+
+<!-- Display Alert Message -->
+<div *ngIf="alertMessage" class="success-message-container">
+ <p class="success-message">{{ alertMessage }}</p>
+ <button class="cancel-button" (click)="clearAlertMessages()">Dismiss</button>
+</div>
+
+ 
+<img src="../../../assets/signuplogo.jpg" class="logo" alt="Signup Logo">
+<h3 class="logintext" style="line-height:30px;">Signup to Your Bodhami Account!</h3>
+
+
+
+<form [formGroup]="signupForm" (ngSubmit)="createAccount()" class="signup-form">
+ <!-- Form fields go here -->
+ <mat-form-field class="example-full-width">
+   <input matInput placeholder="First Name" formControlName="firstName" maxlength="50">
+   
+   <mat-error *ngIf="signupForm.get('firstName').hasError('required') && (signupForm.get('firstName').dirty || signupForm.get('firstName').touched)" class="mobile-only">
+     Mandatory
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('firstName').hasError('pattern') && (signupForm.get('firstName').dirty || signupForm.get('firstName').touched)" class="mobile-only">
+      Alphabets Only!
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('firstName').hasError('required')" class="desktop-only">
+     First Name is required
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('firstName').hasError('pattern')" class="desktop-only">
+     First Name must contain only alphabets
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('firstName').hasError('serverError')">
+     {{ signupForm.get('firstName').errors.serverError }}
+   </mat-error>
+ </mat-form-field>
+
+ <mat-form-field class="example-full-width">
+   <input matInput placeholder="Last Name" formControlName="lastName" maxlength="50">
+   
+   <mat-error *ngIf="signupForm.get('lastName').hasError('required') && (signupForm.get('lastName').dirty || signupForm.get('lastName').touched)" class="mobile-only">
+     Mandatory
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('lastName').hasError('pattern') && (signupForm.get('lastName').dirty || signupForm.get('lastName').touched)" class="mobile-only">
+      Alphabets Only!
+   </mat-error>
+   
+   <mat-error *ngIf="signupForm.get('lastName').hasError('required')" class="desktop-only">
+     Last Name is required
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('lastName').hasError('pattern')" class="desktop-only">
+     Last Name must contain only alphabets
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('lastName').hasError('serverError')">
+     {{ signupForm.get('lastName').errors.serverError }}
+   </mat-error>
+   
+ </mat-form-field>
+
+ <mat-form-field class="example-full-width">
+   <input matInput type="email" placeholder="Email" formControlName="email" maxlength="75">
+  
+   <mat-error *ngIf="signupForm.get('email').hasError('required') && (signupForm.get('email').dirty || signupForm.get('email').touched)" class="mobile-only">
+     Mandatory
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('email').hasError('email') && (signupForm.get('email').dirty || signupForm.get('email').touched)" class="mobile-only">
+    Invalid 
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('email').hasError('required')" class="desktop-only">
+     Email is required
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('email').hasError('email')" class="desktop-only">
+     Invalid email address
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('email').hasError('serverError')">
+     {{ signupForm.get('email').errors.serverError }}
+   </mat-error>
+ </mat-form-field>
+
+ <mat-form-field class="example-full-width">
+   <input matInput placeholder="Phone Number" formControlName="phoneNumber" maxlength="10">
+
+   <mat-error *ngIf="signupForm.get('phoneNumber').hasError('required') && (signupForm.get('phoneNumber').dirty || signupForm.get('phoneNumber').touched)" class="mobile-only">
+     Mandatory
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('phoneNumber').hasError('pattern') && (signupForm.get('phoneNumber').dirty || signupForm.get('phoneNumber').touched)" class="mobile-only">
+     Only Numbers  or upto 10 digits!
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('phoneNumber').hasError('required')" class="desktop-only">
+     Phone Number is required
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('phoneNumber').hasError('pattern')" class="desktop-only">
+     Phone Number must be exactly 10 digits
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('phoneNumber').hasError('serverError')">
+     {{ signupForm.get('phoneNumber').errors.serverError }}
+   </mat-error>
+   
+ </mat-form-field>
+
+ <mat-form-field class="example-full-width">
+   <mat-select placeholder="Country" formControlName="country">
+     <mat-option *ngFor="let country of countries" [value]="country.countryId">
+       {{ country.countryDisp }}
+     </mat-option>
+   </mat-select>
+   
+   <mat-error *ngIf="signupForm.get('country').hasError('required') && (signupForm.get('country').dirty || signupForm.get('country').touched)" class="mobile-only">
+     Mandatory
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('country').hasError('serverError')">
+     {{ signupForm.get('country').errors.serverError }}
+   </mat-error>
+ </mat-form-field>
+
+ <mat-form-field class="example-full-width">
+   <input matInput placeholder="Pincode" formControlName="pincode" maxlength="6">
+  
+   <mat-error *ngIf="signupForm.get('pincode').hasError('required') && (signupForm.get('pincode').dirty || signupForm.get('pincode').touched)" class="mobile-only">
+     Mandatory
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('pincode').hasError('pattern') && (signupForm.get('pincode').dirty || signupForm.get('pincode').touched)" class="mobile-only">
+     Only Numbers or upto 6 digits!
+   </mat-error>
+ 
+   <mat-error *ngIf="signupForm.get('pincode').hasError('required')" class="desktop-only">
+     Pincode is required
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('pincode').hasError('pattern')" class="desktop-only">
+     Pincode must be exactly 6 digits
+   </mat-error>
+   <mat-error *ngIf="signupForm.get('pincode').hasError('serverError')">
+     {{ signupForm.get('pincode').errors.serverError }}
+   </mat-error>
+
+ </mat-form-field>
+
+ <mat-form-field class="example-full-width">
+  <input matInput placeholder="Password" type="password" formControlName="password" maxlength="20">
+  <mat-error *ngIf="signupForm.get('password') && signupForm.get('password').hasError('required')">Password is required</mat-error>
+  <mat-error *ngIf="signupForm.get('password') && signupForm.get('password').hasError('minlength')">Minimum 6 characters</mat-error>
+  <mat-error *ngIf="signupForm.get('password') && signupForm.get('password').hasError('serverError')">
+    {{ signupForm.get('password').errors.serverError }}
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Confirm Password" type="password" formControlName="confirmPassword" maxlength="20">
+  <mat-error *ngIf="signupForm.get('confirmPassword') && signupForm.get('confirmPassword').hasError('required')">
+    Confirm password is required
+  </mat-error>
+  <mat-error *ngIf="errorMessage && signupForm.get('confirmPassword') && signupForm.get('confirmPassword').touched">
+    {{ errorMessage }}
+  </mat-error>
+</mat-form-field>
+
+
+ <div class="text-center">
+   <button mat-raised-button color="primary" type="submit">Create</button>
+ </div>
+</form>
+</mat-dialog-content>
+
+

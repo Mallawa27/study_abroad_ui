@@ -1,0 +1,30 @@
+<div class="documentation-header">
+  Documentation
+</div>
+
+<div class="documentation-body">
+  <h2>Documentation Addition</h2>
+  <p class="sub-text">Please attach the necessary Documents</p>
+
+  <form [formGroup]="documentationForm">
+    <div formArrayName="documents">
+      <div *ngFor="let doc of documents.controls; let i = index" [formGroupName]="i" class="document-group">
+        
+        <div class="document-title">
+          <h3>{{ doc.get('documentType')?.value }}</h3>
+        </div>
+
+        <div class="file-upload-line">
+          <input type="file" (change)="onFileChange($event, i)">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="add-doc-btn">
+      <button mat-raised-button color="primary" (click)="addDocument()" [disabled]="documents.length >= documentTypes.length">
+        Add Document
+      </button>
+    </div>
+  </form>
+</div>

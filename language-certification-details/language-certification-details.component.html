@@ -1,0 +1,24 @@
+<ng-container *ngFor="let entry of formArray.controls; let i = index" [formGroup]="entry">
+    <h3>Language Certification Entry #{{ i + 1 }}</h3>
+  <br><br>
+    <!-- Language Details Section -->
+    <h3>Languages</h3>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Languages You Know" formControlName="languages">
+    </mat-form-field>
+  
+    <!-- Certification Details Section -->
+    <h3>Certifications</h3>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Certification Name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Certification Details" formControlName="details">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Certificate Start Year" formControlName="startYear">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Certificate End Year" formControlName="endYear">
+    </mat-form-field>
+  </ng-container>

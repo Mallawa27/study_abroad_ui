@@ -1,0 +1,75 @@
+<div class="container">
+    <header class="header">
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <div class="profile">
+            <img src="assets/profile.png" alt="Profile Icon">
+        </div>
+    </header>
+    <div class="main-wrapper">
+        <!-- <nav class="sidebar">
+            <h4>DASHBOARD</h4>
+            <ul>
+                <li><a href="#">My Sessions</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Study Abroad</a></li>
+                <li class="explorer">
+                    <a href="#" (click)="toggleExplorer()">Explorer</a>
+                    <ul class="submenu" *ngIf="showExplorer">
+                        <li><a routerLink="/studyabroadexplorer/country">Country</a></li>
+                        <li><a routerLink="/studyabroadexplorer/university">University</a></li>
+                        <li><a routerLink="/studyabroadexplorer/course">Course</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Queries</a></li>
+                <li><a href="#">Billings</a></li>
+            </ul>
+        </nav> -->
+
+        <div class="main-content">
+            <h2>University</h2>
+            <section>
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <h4>Country</h4>
+                        <select [(ngModel)]="filters.country" (change)="filterUniversities()">
+                            <option value="">Any Country</option>
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="germany">Germany</option>
+                            <option value="ireland">Ireland</option>
+                            <option value="japan">Japan</option>
+                            <option value="uk">UK</option>
+                            <option value="usa">USA</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Course Level</h4>
+                        <select [(ngModel)]="filters.courseLevel" (change)="filterUniversities()">
+                            <option value="">Any Course Level</option>
+                            <option value="bachelors">Bachelors</option>
+                            <option value="masters">Masters</option>
+                            <option value="phd">PhD</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Exams Accepted</h4>
+                        <label><input type="checkbox" (change)="filterUniversities()" [(ngModel)]="filters.exams.ielts"> IELTS</label>
+                        <label><input type="checkbox" (change)="filterUniversities()" [(ngModel)]="filters.exams.toefl"> TOEFL</label>
+                        <label><input type="checkbox" (change)="filterUniversities()" [(ngModel)]="filters.exams.sat"> SAT</label>
+                        <label><input type="checkbox" (change)="filterUniversities()" [(ngModel)]="filters.exams.gmat"> GMAT</label>
+                        <label><input type="checkbox" (change)="filterUniversities()" [(ngModel)]="filters.exams.gre"> GRE</label>
+                    </div>
+                </div>
+                <div class="university-list">
+                    <div class="university-card" *ngFor="let uni of filteredUniversities" (click)="navigateToUniversity(uni.name)">
+                        <h4>{{ uni.name }}</h4>
+                        <p>{{ uni.country | titlecase }}</p>
+                        <p>Course Levels: {{ uni.courseLevels.join(', ') }}</p>
+                        <p>Exams Accepted: {{ uni.examsAccepted.join(', ') }}</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+
+/* Error Message Container */
+.error-message-container {
+  
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 20px 0;
+  line-height: 1.6;
+  animation: bounceIn 0.7s ease-out;
+  color: #e74c3c; /* Changed text color */
+}
+
+/* Error Message Box */
+.error-message-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  z-index: 1000;
+  background: #ffcccb; /* Changed background color */
+  border: 1px solid #e74c3c; /* Changed border color */
+  padding: 20px;
+  border-radius: 12px; /* Increased border radius */
+  font-size: 16px;
+  text-align: center;
+  width: 300px;
+  height: 150px;
+  max-width: 100%;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: transform 0.4s, opacity 0.4s;
+  animation: zoomIn 0.7s ease-out;
+  font-family: 'Comic Sans MS', sans-serif; /* Changed font family */
+}
+
+/* Dismiss Button */
+.dismiss-button {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #e74c3c; /* Changed text color */
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.4s, transform 0.4s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.dismiss-button:hover {
+  color: #000;
+  transform: scale(1.2);
+  background: #ffe6e6;
+}
+
+/* Styling for h1 and h2 */
+.error-message-container h1 {
+  font-size: 5rem;
+  font-weight: 500; /* Bold text */
+  color: #c43451; /* Bright red color */
+  margin: 20px 0;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8); /* Strong shadow for readability */
+  animation: fadeInUp 1s ease-out;
+}
+
+.error-container {
+background-color: aliceblue;
+background-size: cover;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+
+
+}

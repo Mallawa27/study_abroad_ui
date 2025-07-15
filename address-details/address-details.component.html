@@ -1,0 +1,33 @@
+<form [formGroup]="formGroup">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Country" formControlName="country">
+      <mat-error *ngIf="formGroup.get('country').hasError('required')">Country is required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Pin code" formControlName="pinCode">
+      <mat-error *ngIf="formGroup.get('pinCode').hasError('required')">Pin code is required</mat-error>
+      <mat-error *ngIf="formGroup.get('pinCode').hasError('pattern')">Pin code must be a 6-digit number</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="State" formControlName="state">
+      <mat-error *ngIf="formGroup.get('state').hasError('required')">State is required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="City" formControlName="city">
+      <mat-error *ngIf="formGroup.get('city').hasError('required')">City is required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Street Address" formControlName="streetAddress">
+      <mat-error *ngIf="formGroup.get('streetAddress').hasError('required')">Street Address is required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Landmark" formControlName="landmark">
+      <mat-error *ngIf="formGroup.get('landmark').hasError('required')">Landmark is required</mat-error>
+    </mat-form-field>
+  </form>
+  

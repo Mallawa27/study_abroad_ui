@@ -1,0 +1,23 @@
+<div class="container">
+  <header class="header">
+    <div class="header-container">
+      <img src="../../../assets/signuplogo.jpg" class="logo" alt="Signup Logo">
+      <img src="../../../assets/bell.png" class="bell" alt="Bell Icon">
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+    <app-sidebar></app-sidebar>
+
+  <div class="main-content">
+    <h2>Select AI Recommendation Type</h2>
+    
+  <div class="recommendation-buttons">
+    <button mat-raised-button color="primary" (click)="goToRecommendation('country')">Country Recommendation</button>
+    <button mat-raised-button color="accent" (click)="goToRecommendation('university')">University Recommendation</button>
+    <button mat-raised-button color="warn" (click)="goToRecommendation('course')">Course Recommendation</button>
+  </div>
+</div>
+</div>
+</div>
+

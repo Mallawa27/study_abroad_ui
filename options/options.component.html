@@ -1,0 +1,22 @@
+<div class="container">
+    <header class="header">
+      <div class="header-container">
+        <img src="../../../assets/signuplogo.jpg" class="logo" alt="Signup Logo">
+        <img src="../../../assets/bell.png" class="bell" alt="Bell Icon">
+      </div>
+    </header>
+  
+    <div class="main-wrapper">
+      <app-sidebar></app-sidebar>
+  
+      <div class="main-content">
+        <h2>Study Abroad Options</h2>
+        <div class="options-container">
+          <div *ngFor="let option of options" class="option-card" (click)="selectOption(option.name)">
+            <h3>{{ option.name }}</h3>
+            <p>{{ option.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

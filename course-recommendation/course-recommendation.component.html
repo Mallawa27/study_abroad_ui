@@ -1,0 +1,79 @@
+<div class="container">
+  <header class="header">
+    <div class="header-container">
+      <img src="../../../assets/signuplogo.jpg" class="logo" alt="Signup Logo">
+      <img src="../../../assets/bell.png" class="bell" alt="Bell Icon">
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+    <app-sidebar></app-sidebar>
+
+    <div class="main-content">
+      <h2>Course Recommendation Questionnaire</h2>
+
+      <section *ngIf="currentQuestionIndex < questions.length; else recommendation">
+        <div class="question-card">
+          <h3 class="question-title">{{ questions[currentQuestionIndex].question }}</h3>
+          <form [formGroup]="questionForm">
+            <div class="mcq-options">
+              <ng-container *ngIf="questions[currentQuestionIndex].type === 'number'; else radioOptions">
+                <input
+                  type="number"
+                  formControlName="answer"
+                  [step]="currentQuestionIndex === 1 ? 0.1 : 1"
+                  [min]="0"
+                  [max]="currentQuestionIndex === 1 ? 10 : undefined"
+                  (change)="onOptionChange()"
+                  placeholder="Enter value"
+                  class="number-input"
+                >
+                <div *ngIf="questionForm.get('answer').errors && questionForm.get('answer').touched" class="error-message">
+                  <span *ngIf="questionForm.get('answer').errors.required">This field is required.</span>
+                  <span *ngIf="questionForm.get('answer').errors.min">Value must be non-negative.</span>
+                  <span *ngIf="questionForm.get('answer').errors.max">GPA must not exceed 10.</span>
+                </div>
+              </ng-container>
+              <ng-template #radioOptions>
+                <label *ngFor="let option of questions[currentQuestionIndex].options; let i = index" class="mcq-option">
+                  <input type="radio" [formControlName]="'answer'" [value]="option" (change)="onOptionChange()">
+                  {{ option }}
+                </label>
+              </ng-template>
+            </div>
+          </form>
+          <div class="navigation-buttons">
+            <button class="next-btn" (click)="nextQuestion()" [disabled]="!questionForm.valid">
+              {{ currentQuestionIndex === questions.length - 1 ? 'Get Recommendations' : 'Next' }}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <ng-template #recommendation>
+        <section>
+          <div class="recommendation-card">
+            <h3>Course Recommendations</h3>
+            <!-- Display error message if the API call fails -->
+            <div *ngIf="errorMessage" class="error-message">
+              <p>{{ errorMessage }}</p>
+            </div>
+            <!-- Display recommendations if available -->
+            <div *ngIf="recommendations; else loading">
+              <div class="recommendation-section">
+                <h4>Recommended Courses</h4>
+                <ul>
+  <li *ngFor="let course of recommendations.courses">{{ course }}</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Display a loading message while waiting for the API response -->
+            <ng-template #loading>
+              <p>Loading your personalized course recommendations...</p>
+            </ng-template>
+          </div>
+        </section>
+      </ng-template>
+    </div>
+  </div>
+</div>

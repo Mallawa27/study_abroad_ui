@@ -1,0 +1,48 @@
+.university-detail-container {
+    padding: 20px;
+    background-color: #f7f9fc;
+    min-height: 100vh;
+}
+
+.university-header {
+    background: linear-gradient(to right, #3498db, #9b59b6);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.university-header h3 {
+    margin: 0 0 10px 0;
+}
+
+.rating {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.university-section {
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.university-section h4 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.download-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #2980b9;
+}

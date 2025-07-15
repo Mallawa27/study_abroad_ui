@@ -1,0 +1,90 @@
+/* Top Gradient Header */
+.documentation-header {
+    background: linear-gradient(to right, #0000ff, #000080, #8b0000); /* Blue to Navy to Dark Red */
+    padding: 15px 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  /* Main Body */
+  .documentation-body {
+    background: white;
+    padding: 40px;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .documentation-body h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  .sub-text {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 30px;
+  }
+  
+  /* Each Document Group */
+  .document-group {
+    margin-bottom: 30px;
+  }
+  
+  .document-title h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  
+  .file-upload-line {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin-bottom: 10px;
+  }
+  
+  /* Add Document Button */
+  .add-doc-btn {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .add-doc-btn button {
+    background-color: #009688; /* Green button */
+    color: white;
+    font-weight: bold;
+    text-transform: none;
+    padding: 6px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  
+  .add-doc-btn button:hover {
+    background-color: #00796b;
+  }
+  
+  /* Stepper Navigation Buttons */
+  .mat-horizontal-stepper-header {
+    background-color: transparent;
+  }
+  
+  /* Button overrides for Back/Next if needed separately */
+  button.mat-button {
+    border-radius: 20px; /* Rounded edges */
+    text-transform: none;
+    padding: 8px 25px;
+    font-weight: bold;
+  }
+  
+  button.mat-button[color="primary"] {
+    background-color: #009688;
+    color: white;
+  }
+  
+  button.mat-button[color="warn"] {
+    background-color: lightgray;
+    color: black;
+  }
+  

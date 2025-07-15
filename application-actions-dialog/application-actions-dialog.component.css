@@ -1,0 +1,30 @@
+.dialog-container {
+    width: 400px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+  }
+  
+  .dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .dialog-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .dialog-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    justify-items: center;
+  }
+  
+  button {
+    width: 150px;
+  }

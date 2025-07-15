@@ -1,0 +1,54 @@
+<!-- <form [formGroup]="formGroup">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Degree" formControlName="degree">
+      <mat-error *ngIf="formGroup.get('degree').hasError('required')">Degree is required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Institution" formControlName="institution">
+      <mat-error *ngIf="formGroup.get('institution').hasError('required')">Institution is required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Graduation Year" formControlName="graduationYear">
+      <mat-error *ngIf="formGroup.get('graduationYear').hasError('required')">Graduation Year is required</mat-error>
+      <mat-error *ngIf="formGroup.get('graduationYear').hasError('pattern')">Must be a valid year</mat-error>
+    </mat-form-field>
+  </form>
+   -->
+   <ng-container *ngFor="let entry of formArray.controls; let i = index" [formGroup]="entry">
+    <h3>Education Entry #{{ i + 1 }}</h3>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Level of Education" formControlName="levelOfEducation">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="School Name" formControlName="schoolName">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="State" formControlName="state">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Academic Start Year" formControlName="startYear">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Field of Study" formControlName="fieldOfStudy">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Country" formControlName="country">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="City" formControlName="city">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Academic End Year" formControlName="endYear">
+    </mat-form-field>
+  
+    <div formGroupName="degreeType" class="checkbox-group">
+      <mat-checkbox formControlName="bachelor">Bachelor's</mat-checkbox>
+      <mat-checkbox formControlName="master">Master's</mat-checkbox>
+      <mat-checkbox formControlName="phd">PhD</mat-checkbox>
+    </div>
+  </ng-container>
+  
+  <button mat-raised-button color="primary" (click)="addEntry.emit()">+ Add More Education Details</button>
+  
